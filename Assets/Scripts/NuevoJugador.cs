@@ -19,8 +19,8 @@ public class NuevoJugador : MonoBehaviour
         minPantalla.x = minPantalla.x + 0.65f;
         maxPantalla.x = maxPantalla.x - 0.65f;
 
-        minPantalla.y = minPantalla.y + 0.55f;
-        maxPantalla.y = maxPantalla.y - 0.55f;
+        minPantalla.y = minPantalla.y + 0.50f;
+        maxPantalla.y = maxPantalla.y - 0.50f;
     }
 
     // Update is called once per frame
