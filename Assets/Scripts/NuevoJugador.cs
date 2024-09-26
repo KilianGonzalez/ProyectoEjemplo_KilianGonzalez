@@ -8,6 +8,9 @@ public class NuevoJugador : MonoBehaviour
 
     private Vector2 minPantalla, maxPantalla;
 
+    [SerializeField]
+    private GameObject prefabProyectil;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,12 @@ public class NuevoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MovimientoNave();
+        DisparoProyectil();
+    }
+
+    private void MovimientoNave()
+    {
         float dirX = Input.GetAxisRaw("Horizontal");
         float dirY = Input.GetAxisRaw("Vertical");
         //Debug.Log("X: " + dirX + " - Y: " + dirY);
@@ -43,5 +52,14 @@ public class NuevoJugador : MonoBehaviour
         newpos.y = Mathf.Clamp(newpos.y, minPantalla.y, maxPantalla.y);
 
         transform.position = newpos;
+    }
+
+    private void DisparoProyectil()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            GameObject proyectil = Instantiate(prefabProyectil);
+            proyectil.transform.position = transform.position;
+        }
     }
 }
