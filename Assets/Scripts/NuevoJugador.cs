@@ -16,11 +16,15 @@ public class NuevoJugador : MonoBehaviour
         minPantalla = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
         maxPantalla = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
 
-        minPantalla.x = minPantalla.x + 0.65f;
-        maxPantalla.x = maxPantalla.x - 0.65f;
+        float medidaMediaImagenX = GetComponent<SpriteRenderer>().sprite.bounds.size.x * transform.localScale.x / 2;
+        float medidaMediaImagenY = GetComponent<SpriteRenderer>().sprite.bounds.size.y * transform.localScale.y / 2;
+        //minPantalla.x = minPantalla.x + 0.65f;
+        //minPantalla.x += 0.65f; // Es sinonimo de la linea de arriba
+        minPantalla.x += medidaMediaImagenX;//Bounds
+        maxPantalla.x -= medidaMediaImagenX;
 
-        minPantalla.y = minPantalla.y + 0.50f;
-        maxPantalla.y = maxPantalla.y - 0.50f;
+        minPantalla.y += medidaMediaImagenY;
+        maxPantalla.y -= medidaMediaImagenY;
     }
 
     // Update is called once per frame
