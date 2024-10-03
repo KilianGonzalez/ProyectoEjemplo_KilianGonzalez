@@ -41,7 +41,6 @@ public class NuevoJugador : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         float dirY = Input.GetAxisRaw("Vertical");
-        //Debug.Log("X: " + dirX + " - Y: " + dirY);
 
         Vector2 dir = new Vector2(dirX, dirY);
 
@@ -52,6 +51,14 @@ public class NuevoJugador : MonoBehaviour
         newpos.y = Mathf.Clamp(newpos.y, minPantalla.y, maxPantalla.y);
 
         transform.position = newpos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D objetotocado)
+    {
+        if (objetotocado.tag == "Numero")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void DisparoProyectil()

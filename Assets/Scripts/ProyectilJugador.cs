@@ -28,4 +28,12 @@ public class ProyectilJugador : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D objetotocado)
+    {
+        if (objetotocado.tag == "Numero")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
