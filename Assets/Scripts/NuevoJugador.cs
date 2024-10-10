@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NuevoJugador : MonoBehaviour
 {
@@ -11,10 +12,17 @@ public class NuevoJugador : MonoBehaviour
     [SerializeField]
     private GameObject prefabProyectil;
 
+    [SerializeField] private GameObject prefabExplosion;
+    [SerializeField] private TMPro.TextMeshProUGUI uiVidasJugador;
+
+    private int vidasjugador;
+
     // Start is called before the first frame update
     void Start()
     {
+
         _vel = 8;
+        vidasjugador = 3;
 
         minPantalla = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
         maxPantalla = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
@@ -57,7 +65,15 @@ public class NuevoJugador : MonoBehaviour
     {
         if (objetotocado.tag == "Numero")
         {
-            Destroy(gameObject);
+            vidasjugador --;
+            uiVidasJugador.text = "Vidas: " + vidasjugador.ToString();
+            if (vidasjugador <= 0)
+            {
+                GameObject explosion = Instantiate(prefabExplosion);
+                explosion.transform.position = transform.position;
+                SceneManager.LoadScene("PantallaResultados");
+                Destroy(gameObject);
+            }
         }
     }
 

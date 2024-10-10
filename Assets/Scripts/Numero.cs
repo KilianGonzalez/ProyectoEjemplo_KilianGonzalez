@@ -11,6 +11,9 @@ public class Numero : MonoBehaviour
     public int valornum;
 
     private Vector2 minPantalla;
+
+    [SerializeField] private GameObject prefabExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,8 @@ public class Numero : MonoBehaviour
     {
         if(objetotocado.tag == "ProyectilJugador" || objetotocado.tag == "NaveJugador")
         {
+            GameObject explosion = Instantiate(prefabExplosion);
+            explosion.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
