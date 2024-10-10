@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantallaResultados.unity
     guid: da5b30be1da133545896d55e7e761e4d
+  - enabled: 1
+    path: Assets/Scenes/PantallaInicio.unity
+    guid: 1802342a676252f41bc3a51975496a02
   m_configObjects: {}

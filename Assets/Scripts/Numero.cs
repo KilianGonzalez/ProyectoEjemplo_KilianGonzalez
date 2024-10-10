@@ -28,7 +28,13 @@ public class Numero : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D objetotocado)
     {
-        if(objetotocado.tag == "ProyectilJugador" || objetotocado.tag == "NaveJugador")
+        if(objetotocado.tag == "ProyectilJugador")
+        {
+            GameObject explosion = Instantiate(prefabExplosion);
+            explosion.transform.position = transform.position;
+            DatosGlobales.puntos += valornum;
+            Destroy(gameObject);
+        } else if (objetotocado.tag == "NaveJugador")
         {
             GameObject explosion = Instantiate(prefabExplosion);
             explosion.transform.position = transform.position;

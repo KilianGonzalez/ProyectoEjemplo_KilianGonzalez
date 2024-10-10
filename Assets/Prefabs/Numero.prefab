@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesnumeros:
+  - {fileID: 21300000, guid: ea0800bba16ce1b49b062073640c288b, type: 3}
   - {fileID: 21300000, guid: aafc1762b16a7034ca6c8356b764c286, type: 3}
   - {fileID: 21300000, guid: 095c79f2f74756a4c99c2a942cb31eac, type: 3}
   - {fileID: 21300000, guid: 6b436a477b95dc64888ea0e712cd827f, type: 3}
@@ -109,7 +110,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4eb0111f300e9e74c8147e848452b8bc, type: 3}
   - {fileID: 21300000, guid: 8dafefe7d6189894cb23a590585f8e52, type: 3}
   - {fileID: 21300000, guid: cc7d7adc01b83e046a39046c108df542, type: 3}
-  - {fileID: 21300000, guid: ea0800bba16ce1b49b062073640c288b, type: 3}
   valornum: 0
   prefabExplosion: {fileID: 2372279195677228779, guid: 98c675749dcc5954a9862f1b38b793f6, type: 3}
 --- !u!50 &-1265685939394406306
